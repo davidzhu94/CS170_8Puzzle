@@ -111,9 +111,44 @@ void Puzzle::print()
             endLine = 0;
         }
     }
+    cout << endl;
 }
 
+bool Puzzle::moveBlankUp()
+{
+    if(blankPos < (int)sqrt(grid.size()))
+        return false;
+    swap(grid[blankPos], grid[blankPos-(int)sqrt(grid.size())]);
+    blankPos = blankPos - (int)sqrt(grid.size());
+    return true;
+}
 
+bool Puzzle::moveBlankDown()
+{
+    if(blankPos > 5)
+        return false;
+    swap(grid[blankPos], grid[blankPos + (int)sqrt(grid.size())]);
+    blankPos = blankPos + (int)sqrt(grid.size());
+    return true;
+}
+
+bool Puzzle::moveBlankLeft()
+{
+    if(blankPos == 0 || blankPos == 3 || blankPos == 6)
+        return false;
+    swap(grid[blankPos], grid[blankPos-1]);
+    blankPos--;
+    return true;
+}
+
+bool Puzzle::moveBlankRight()
+{
+    if(blankPos == 2 || blankPos == 5 || blankPos == 8)
+        return false;
+    swap(grid[blankPos], grid[blankPos+1]);
+    blankPos++;
+    return true;
+}
 
 void intro();
 Puzzle parsePuzzle(int x = 3);
@@ -128,6 +163,14 @@ int main(int argc, const char * argv[]) {
         cout << "i am real" << endl;
     else
         cout << "fuck" << endl;
+    myPuzzle.print();
+    myPuzzle.moveBlankUp();
+    myPuzzle.print();
+    myPuzzle.moveBlankDown();
+    myPuzzle.print();
+    myPuzzle.moveBlankLeft();
+    myPuzzle.print();
+    myPuzzle.moveBlankRight();
     myPuzzle.print();
     return 0;
 }
