@@ -10,6 +10,7 @@
 #include <cmath>
 #include <algorithm>
 #include "Puzzle.hpp"
+#include "Node.hpp"
 
 using namespace std;
 
@@ -22,20 +23,21 @@ int main(int argc, const char * argv[]) {
     cout << "how big yo?" << endl;
     int size = 0;
     cin >> size;
-    Puzzle myPuzzle = parsePuzzle(size);
-    if(myPuzzle.validPuzzle())
+    Node root;
+    root.state = parsePuzzle(size);
+    if(root.state.validPuzzle())
         cout << "i am real" << endl;
     else
         cout << "fuck" << endl;
-    myPuzzle.print();
-    myPuzzle.moveBlankUp();
-    myPuzzle.print();
-    myPuzzle.moveBlankDown();
-    myPuzzle.print();
-    myPuzzle.moveBlankLeft();
-    myPuzzle.print();
-    myPuzzle.moveBlankRight();
-    myPuzzle.print();
+    root.state.print();
+    root.state.moveBlankUp();
+    root.state.print();
+    root.state.moveBlankDown();
+    root.state.print();
+    root.state.moveBlankLeft();
+    root.state.print();
+    root.state.moveBlankRight();
+    root.state.print();
     return 0;
 }
 

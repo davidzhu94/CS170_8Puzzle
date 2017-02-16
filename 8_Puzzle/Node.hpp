@@ -13,6 +13,7 @@
 #include <vector>
 #include <cmath>
 #include <algorithm>
+#include <queue>
 #include "Puzzle.hpp"
 
 #include <stdio.h>
@@ -26,8 +27,7 @@ public:
     int depth;
     Puzzle state;
     int getValue(int method);
-    
-    
+
     int uniform();
     int misplaced();
     int manhattan();
