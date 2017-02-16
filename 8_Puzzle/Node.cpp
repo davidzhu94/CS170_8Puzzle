@@ -19,7 +19,7 @@ using namespace std;
 
 int Node::uniform()
 {
-    return depth;
+    return 0;
 }
 
 int Node::misplaced()
@@ -38,12 +38,36 @@ int Node::manhattan()
     return 0;
 }
 
-int Node::getValue(int method)
+void Node::getValue(int method)
 {
     if(method == 0)
-        return uniform();
-    if(method == 1)
-        return misplaced();
-    return manhattan();
+        totalCost = uniform() + depth;
+    else if(method == 1)
+        totalCost = misplaced() + depth;
+    else totalCost = manhattan() + depth;
 }
+
+//Takes user input to generate a puzzle.  Converts 0 to be * character
+void Node::parsePuzzle(int length)
+{
+    Puzzle newPuzzle;
+    char holder;
+    cout << "To enter your puzzle, please type the numbers (seperated by spaces) that you want per row, with 0 indicating the blank space" << endl;
+    for(int j = 0; j < length; j++)
+    {
+        cout << "Please enter row number " << j+1 << endl;
+        for(int i = 0; i < length; i++)
+        {
+            cin >> holder;
+            if(holder == '0')
+            {
+                holder = '*';
+                newPuzzle.blankPos = (int)newPuzzle.grid.size();
+            }
+            newPuzzle.grid.push_back(holder);
+        }
+    }
+    state = newPuzzle;
+}
+
 

@@ -26,11 +26,12 @@ public:
     vector<char> goalState;
     int depth;
     Puzzle state;
-    int getValue(int method);
-
+    void getValue(int method);
     int uniform();
     int misplaced();
     int manhattan();
+    int totalCost;
+    void parsePuzzle(int x = 3);
 };
 
 #endif /* Node_hpp */
