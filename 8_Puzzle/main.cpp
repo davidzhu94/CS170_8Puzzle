@@ -9,8 +9,10 @@
 #include <vector>
 #include <cmath>
 #include <algorithm>
+#include <queue>
 #include "Puzzle.hpp"
-#include "Node.hpp"
+#include "Solver.hpp"
+
 
 using namespace std;
 
@@ -22,17 +24,9 @@ int main(int argc, const char * argv[]) {
     cout << "how big yo?" << endl;
     int size = 0;
     cin >> size;
-    Node root;
-    root.parsePuzzle(size);
-    root.state.print();
-    root.state.moveBlankUp();
-    root.state.print();
-    root.state.moveBlankDown();
-    root.state.print();
-    root.state.moveBlankLeft();
-    root.state.print();
-    root.state.moveBlankRight();
-    root.state.print();
+    Solver me;
+    me.root.parsePuzzle(size);
+    me.solve();
     return 0;
 }
 
@@ -44,11 +38,3 @@ void intro()
     cout << "Please enter '1' to use the default puzzle or '2' to enter your own!" << endl;
 }
 
-
-struct compareNode
-{
-    bool operator()(Node a, Node b)
-    {
-        return a.totalCost > b.totalCost;
-    }
-};

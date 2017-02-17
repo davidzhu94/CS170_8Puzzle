@@ -20,7 +20,7 @@ public:
     vector<char> grid;
     void operator=(const Puzzle& p);
     bool validPuzzle();
-    void print();
+    void print() const;
     bool moveBlankUp();
     bool moveBlankDown();
     bool moveBlankLeft();

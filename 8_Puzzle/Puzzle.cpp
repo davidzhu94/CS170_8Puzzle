@@ -83,7 +83,7 @@ bool Puzzle::validPuzzle()
     return false;
 }
 
-void Puzzle::print()
+void Puzzle::print() const
 {
     int endLine = 0;
     for(int i = 0; i < grid.size(); i++)

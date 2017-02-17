@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630625A11E566A6100B96BC3 /* Solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6306259F1E566A6100B96BC3 /* Solver.cpp */; };
 		631CFFDB1E55972500151FFF /* Puzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 631CFFD91E55972500151FFF /* Puzzle.cpp */; };
 		631CFFDE1E559A2C00151FFF /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 631CFFDC1E559A2C00151FFF /* Node.cpp */; };
 		63C6518C1E530A73008AD41B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C6518B1E530A73008AD41B /* main.cpp */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6306259F1E566A6100B96BC3 /* Solver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Solver.cpp; sourceTree = "<group>"; };
+		630625A01E566A6100B96BC3 /* Solver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Solver.hpp; sourceTree = "<group>"; };
 		631CFFD91E55972500151FFF /* Puzzle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Puzzle.cpp; sourceTree = "<group>"; };
 		631CFFDA1E55972500151FFF /* Puzzle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Puzzle.hpp; sourceTree = "<group>"; };
 		631CFFDC1E559A2C00151FFF /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				631CFFDA1E55972500151FFF /* Puzzle.hpp */,
 				631CFFDC1E559A2C00151FFF /* Node.cpp */,
 				631CFFDD1E559A2C00151FFF /* Node.hpp */,
+				6306259F1E566A6100B96BC3 /* Solver.cpp */,
+				630625A01E566A6100B96BC3 /* Solver.hpp */,
 			);
 			path = 8_Puzzle;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			files = (
 				631CFFDE1E559A2C00151FFF /* Node.cpp in Sources */,
 				63C6518C1E530A73008AD41B /* main.cpp in Sources */,
+				630625A11E566A6100B96BC3 /* Solver.cpp in Sources */,
 				631CFFDB1E55972500151FFF /* Puzzle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

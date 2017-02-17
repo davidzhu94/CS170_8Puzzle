@@ -23,6 +23,9 @@ using namespace std;
 class Node
 {
 public:
+    Node(){depth = 0;}
+    Node(int deep){depth = deep;}
+    void operator=(const Node& n);
     vector<char> goalState;
     int depth;
     Puzzle state;

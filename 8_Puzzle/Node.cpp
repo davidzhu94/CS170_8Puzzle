@@ -17,6 +17,12 @@
 using namespace std;
 #include "Node.hpp"
 
+void Node::operator=(const Node& n)
+{
+    depth = n.depth;
+    state = n.state;
+}
+
 int Node::uniform()
 {
     return 0;
