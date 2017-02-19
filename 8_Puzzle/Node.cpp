@@ -19,7 +19,7 @@ using namespace std;
 
 void Node::operator=(const Node& n)
 {
-    depth = n.depth;
+    gn = n.gn;
     state = n.state;
 }
 
@@ -31,11 +31,14 @@ int Node::uniform()
 int Node::misplaced()
 {
     int counter = 0;
-    for(int i = 0; i < goalState.size(); i++)
+    for(int i = 0; i < state.grid.size(); i++)
     {
-        if(state.grid[i] != goalState.size())
+        if(state.grid[i] != goalState.grid[i])
             counter++;
+        cout << "i am looking at " << state.grid[i] << " and comparing to  " << goalState.grid[i] << endl;
+            
     }
+    cout << "MISPLACED TILE COUNT == " << counter << endl;
     return counter;
 }
 
@@ -46,11 +49,14 @@ int Node::manhattan()
 
 void Node::getValue(int method)
 {
-    if(method == 0)
-        totalCost = uniform() + depth;
-    else if(method == 1)
-        totalCost = misplaced() + depth;
-    else totalCost = manhattan() + depth;
+    if(method == 1)
+        hn = uniform();
+    else if(method == 2)
+    {
+        hn = misplaced();
+    }
+    else hn = manhattan();
+    //totalCost = hn + gn;
 }
 
 //Takes user input to generate a puzzle.  Converts 0 to be * character

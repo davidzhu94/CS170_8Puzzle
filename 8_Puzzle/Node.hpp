@@ -23,12 +23,13 @@ using namespace std;
 class Node
 {
 public:
-    Node(){depth = 0;}
-    Node(int deep){depth = deep;}
+    Node(){gn = 0;}
+    Node(int deep){gn = deep;}
     void operator=(const Node& n);
-    vector<char> goalState;
-    int depth;
+    int gn;
+    int hn;
     Puzzle state;
+    Puzzle goalState;
     void getValue(int method);
     int uniform();
     int misplaced();

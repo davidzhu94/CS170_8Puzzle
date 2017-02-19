@@ -26,7 +26,9 @@ int main(int argc, const char * argv[]) {
     cin >> size;
     Solver me;
     me.root.parsePuzzle(size);
+    me.getGoal();
     me.solve();
+    
     return 0;
 }
 

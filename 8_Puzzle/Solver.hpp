@@ -21,7 +21,7 @@ struct compareNode
 {
     bool operator()(Node a, Node b)
     {
-        return a.totalCost > b.totalCost;
+        return (a.gn+a.hn) > (b.gn+b.hn);
     }
 };
 
@@ -29,7 +29,16 @@ class Solver
 {
 public:
     Node root;
+    Node goal;
+    int heuristic = 1;
+    int misplaced();
+    int assignValue();
+    void getGoal();
+    bool checkGoal(Node checkMe);
     priority_queue<Node, vector<Node>, compareNode> frontier;
+    vector<Puzzle> traveled;
+    vector<char> goalState;
+    bool traveledBefore(Node check);
     void expand(Node root);
     void solve();
 
